@@ -15,9 +15,9 @@ namespace GameUnits
             Health = health;
         }
 
-        public virtual void Move(Vector2 distance)
+        public virtual void Move()
         {
-            Console.WriteLine($"{this.GetType().Name} Moved {distance.Length()}m");
+            Console.WriteLine($"{this.movement}");
         }
         
         public override string ToString()
