@@ -9,7 +9,6 @@ namespace GameUnits
         public override float Cost => 5;
 
         public SettlerUnit() : base(1,2) { }
-
         public void Settle(Vector2 position) { }
     }
 }
