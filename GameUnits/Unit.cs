@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace GameUnits
 {
@@ -14,9 +15,9 @@ namespace GameUnits
             Health = health;
         }
 
-        public virtual void Move(int distance)
+        public virtual void Move(Vector2 distance)
         {
-            Console.WriteLine($"Moved {distance} places");
+            Console.WriteLine($"{this.GetType().Name} Moved {distance.Length()}m");
         }
     }
 }

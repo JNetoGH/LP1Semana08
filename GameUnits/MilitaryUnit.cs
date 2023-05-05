@@ -22,7 +22,6 @@
 
         public void Attack(Unit u)
         {
-            // code for attacking another unit
             XP++;
             u.Health -= AttackPower;
         }
