@@ -19,5 +19,10 @@ namespace GameUnits
         {
             Console.WriteLine($"{this.GetType().Name} Moved {distance.Length()}m");
         }
+        
+        public override string ToString()
+        {
+            return $"{this.GetType().Name}: HP={Health} COST={Cost:F2}";
+        }
     }
 }
