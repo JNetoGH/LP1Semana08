@@ -3,22 +3,35 @@ using System.Numerics;
 
 namespace GameUnits
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
+            // Criar array com três unidades
+            Unit[] units = new Unit[]
+            {
+                new MilitaryUnit(3, 10, 5),
+                new MilitaryUnit(4, 5, 3),
+                new SettlerUnit(),
+            };
 
-            Console.WriteLine(" ");
-            SettlerUnit settler = new SettlerUnit();
-            settler.Move(new Vector2(2f, 3f));
-            Console.WriteLine($"SettlerUnit Health: {settler.Health}");
-            Console.WriteLine($"SettlerUnit Cost: {settler.Cost}");
-            
-            Console.WriteLine(" ");
-            MilitaryUnit military = new MilitaryUnit(2, 5, 10);
-            military.Move(new Vector2(5f, 6f));
-            Console.WriteLine($"MilitaryUnit Health: {military.Health}");
-            Console.WriteLine($"MilitaryUnit Cost: {military.Cost}");
+            // Unidade 0 ataca unidade 1
+            (units[0] as MilitaryUnit).Attack(units[1]);
+            // Unidade 0 ataca unidade 2
+            (units[0] as MilitaryUnit).Attack(units[2]);
+
+            // "Imprimir" cada unidade
+            // chamando implicitamente o método ToString() de cada uma delas
+            foreach (Unit u in units)
+            {
+                Console.WriteLine(u);
+            }
+
+            // Output esperado:
+            //
+            // MilitaryUnit: HP=12 COST=7 AP=5 XP=2
+            // MilitaryUnit: HP=4 COST=3 AP=3 XP=0
+            // SettlerUnit: HP=1 COST=5
         }
     }
 }
