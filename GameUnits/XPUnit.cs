@@ -4,7 +4,8 @@
     {
         
         public int XP { get; protected set; }
-
+        public override int Health { get; set; }
+        
         protected XPUnit(int movement, int health) : base(movement, health)
         {
             XP = 0;

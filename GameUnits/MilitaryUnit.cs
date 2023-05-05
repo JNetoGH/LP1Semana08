@@ -5,9 +5,8 @@
     {
         
         private int movement;
-        public int AttackPower { get; }
+        public int AttackPower { get; private set; }
         public override float Cost => AttackPower + XP;
-
         public override int Health 
         {
             get => base.Health + XP;
@@ -16,13 +15,13 @@
 
         public MilitaryUnit(int movement, int health, int attackPower) : base(movement, health)
         {
-            AttackPower = attackPower;
+            this.AttackPower = attackPower;
         }
 
         public void Attack(Unit u)
         {
-            XP++;
-            u.Health -= AttackPower;
+            this.XP++;
+            u.Health--;
         }
         
         public override string ToString()

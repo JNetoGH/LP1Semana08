@@ -11,7 +11,7 @@
         {
             if (unit is DiplomatUnit) this.XP += 3;
             else if (unit is SettlerUnit) this.XP += 2;
-            else this.XP++;
+            else this.XP ++;
         }
      
     }
